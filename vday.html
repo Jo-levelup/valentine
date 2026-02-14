@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Valentine’s Day ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffe6eb;
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Heart border */
+    .border {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      color: #ff3366;
+      font-size: 24px;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Main content */
+    .container {
+      text-align: center;
+      z-index: 2;
+    }
+
+    h1 {
+      color: #cc0033;
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    /* Coke bottle */
+    .coke {
+      width: 140px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .shake {
+      animation: shake 0.5s;
+    }
+
+    @keyframes shake {
+      0% { transform: rotate(0deg); }
+      20% { transform: rotate(-10deg); }
+      40% { transform: rotate(10deg); }
+      60% { transform: rotate(-10deg); }
+      80% { transform: rotate(10deg); }
+      100% { transform: rotate(0deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hearts Border -->
+  <div class="border">
+    <!-- Top -->
+    <span class="heart" style="top:10px; left:10px;">❤️</span>
+    <span class="heart" style="top:10px; left:25%;">❤️</span>
+    <span class="heart" style="top:10px; left:50%;">❤️</span>
+    <span class="heart" style="top:10px; left:75%;">❤️</span>
+
+    <!-- Bottom -->
+    <span class="heart" style="bottom:10px; left:10px;">❤️</span>
+    <span class="heart" style="bottom:10px; left:25%;">❤️</span>
+    <span class="heart" style="bottom:10px; left:50%;">❤️</span>
+    <span class="heart" style="bottom:10px; left:75%;">❤️</span>
+
+    <!-- Left -->
+    <span class="heart" style="top:25%; left:10px;">❤️</span>
+    <span class="heart" style="top:50%; left:10px;">❤️</span>
+    <span class="heart" style="top:75%; left:10px;">❤️</span>
+
+    <!-- Right -->
+    <span class="heart" style="top:25%; right:10px;">❤️</span>
+    <span class="heart" style="top:50%; right:10px;">❤️</span>
+    <span class="heart" style="top:75%; right:10px;">❤️</span>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Happy Valentine’s Day RIRII ❤️</h1>
+
+    <img
+      src="https://i5.walmartimages.com/asr/e52b8ecf-823f-4d61-b6a1-333cad11bf75.55dd2daadc35526bd679de27bbe54b09.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
+      alt="Coke Bottle"
+      class="coke"
+      id="cokeBottle"
+    />
+
+    <p>Click the bottle 💕</p>
+  </div>
+
+  <script>
+    const bottle = document.getElementById("cokeBottle");
+
+    bottle.addEventListener("click", () => {
+      bottle.classList.remove("shake");
+      void bottle.offsetWidth; // reset animation
+      bottle.classList.add("shake");
+    });
+  </script>
+
+</body>
+</html>
